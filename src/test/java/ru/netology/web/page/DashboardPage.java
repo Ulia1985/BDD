@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class DashdoardPage {
+public class DashboardPage {
     private final String balanceStart = ", баланс: ";
     private final String balanceFinish = " р.";
     private final SelenideElement heading = $("[data-test-id=dashboard]");
@@ -24,7 +24,6 @@ public class DashdoardPage {
         var text = cards.findBy(Condition.text(cardInfo.getCardNumber().substring(15))).getText();
         return extractBalance(text);
     }
-
 
     public TransferPage selectCardToTransfer(DataHelper.CardInfo cardInfo) {
         cards.findBy(Condition.attribute("data-test-id",cardInfo.getTestId())).$("button").click();
