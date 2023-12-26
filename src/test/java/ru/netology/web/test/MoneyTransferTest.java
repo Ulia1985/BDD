@@ -20,7 +20,7 @@ public class MoneyTransferTest {
 
         @BeforeEach
         void setup() {
-        var loginPage = open("http://localhost:7777", LoginPage.class);
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = getVerificationCode();
